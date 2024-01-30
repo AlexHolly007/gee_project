@@ -4,6 +4,8 @@ import os
 import urllib
 from os.path import expanduser
 
+# This is a test to see that my commits are being sent to the main branch - Cam
+
 # Initialize the Earth Engine API
 ee.Authenticate()
 ee.Initialize(project='ee-hollya')
