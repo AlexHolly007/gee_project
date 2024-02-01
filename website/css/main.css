@@ -39,10 +39,12 @@ body {
 }
 
 .content--container {
-    margin: 100vh 400px;
+    margin: 95vh 400px;
 }
 
 .content--container p {
     text-align: justify;
+    line-height: 1.5;
+    padding: 15px;
     border: 1px solid black;
 }
