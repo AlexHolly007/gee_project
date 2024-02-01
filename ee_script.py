@@ -43,7 +43,7 @@ urllib.request.urlretrieve(visualization.getThumbURL(params={'region': roi.getIn
 
 print(f"Image saved locally at: {local_image_path}")
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
     #parser = argparse.ArgumentParser(description="This script runs inference on aois within a .csv file.")
     #parser.add_argument("-d", "--dataset_dir", type=str, required=True, help="Directory containing the hr_dataset, and lr_dataset, in the correct format(see worldstrat github)")
     #args = parser.parse_args()
