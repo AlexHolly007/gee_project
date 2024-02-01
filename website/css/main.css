@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+body {
+    background-color: #F0EAD6;
+    margin: 0;
+    height: 200vh;
+    display: grid;
+    background-image: url("../images/land.jpg");
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    height: 75px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar--links {
+    padding: 15px;
+    margin: 5px;
+    font-size: large;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 17px;
+    background-color: #F0EAD6;
+}
+
+.hero--txt {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 100px;
+}
+
+.content--container {
+    margin: 95vh 400px;
+}
+
+.content--container p {
+    text-align: justify;
+    line-height: 1.5;
+    padding: 15px;
+    border: 1px solid black;
+}
