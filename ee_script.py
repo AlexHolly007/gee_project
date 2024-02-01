@@ -33,7 +33,7 @@ visualization = L8_clip.visualize(bands=["B4", "B3", "B2"], min=0, max=0.3, gamm
 Image(url=visualization.getThumbURL())
 
 # Save the image to local machine
-local_image_path = os.path.expanduser('~/Desktop/gee_proj/output.png')
+local_image_path = os.path.expanduser('output.png')
 visualization.getThumbURL(params={'region': roi.getInfo()['coordinates'], 'format': 'png', 'dimensions': 512})
 urllib.request.urlretrieve(visualization.getThumbURL(params={'region': roi.getInfo()['coordinates'], 'format': 'png', 'dimensions': 512}),
                            local_image_path)
