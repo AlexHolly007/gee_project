@@ -39,4 +39,3 @@ urllib.request.urlretrieve(visualization.getThumbURL(params={'region': roi.getIn
                            local_image_path)
 
 print(f"Image saved locally at: {local_image_path}")
-if __name__ == "__main__":
