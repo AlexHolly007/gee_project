@@ -17,24 +17,40 @@ def create_image():
     end_date = '2021-01-01'
 
     # Create a Landsat 8 image collection and apply filters
-    L8 = ee.ImageCollection("LANDSAT/LC08/C02/T1_TOA") \
-    .filterBounds(roi) \
-    .filterDate(start_date, end_date) \
-    .filterMetadata("CLOUD_COVER", 'less_than', 1) \
-    .mean()
+
+    #L8 = ee.ImageCollection("LANDSAT/LC08/C02/T1_TOA") \
+    L8 = (
+        ee.ImageCollection("ECMWF/ERA5/DAILY") \
+        #.filterBounds(roi) \
+        #.filterDate(start_date, end_date) \
+        #.filterMetadata("CLOUD_COVER", 'less_than', 1) \
+        #.mean()
+        .select('total_precipitation') \
+        .filterBounds(roi) \
+        .filterDate(ee.Date(start_date), ee.Date(end_date)) \
+        .mean()
+    )
 
     # Clip the image to the ROI
     L8_clip = L8.clip(roi)
 
     # Display the image
-    visualization = L8_clip.visualize(bands=["B4", "B3", "B2"], min=0, max=0.3, gamma=1.4)
+    #visualization = L8_clip.visualize(bands=["B4", "B3", "B2"], min=0, max=0.3, gamma=1.4)
+    visualization = L8_clip.visualize(min=0, max=10)
     Image(url=visualization.getThumbURL())
 
     # Save the image to local machine
     local_image_path = os.path.expanduser('output.png')
-    visualization.getThumbURL(params={'region': roi.getInfo()['coordinates'], 'format': 'png', 'dimensions': 512})
-    urllib.request.urlretrieve(visualization.getThumbURL(params={'region': roi.getInfo()['coordinates'], 'format': 'png', 'dimensions': 512}),
-                        local_image_path)
+    urllib.request.urlretrieve(
+                    visualization.getThumbURL(
+                        params={
+                            'region': roi.getInfo()['coordinates'],
+                            'format': 'png',
+                            'dimensions': 512
+                        }
+                    ),
+                    local_image_path
+                )
 
     print(f"Image saved locally at: {local_image_path}")
 
