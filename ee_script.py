@@ -5,6 +5,10 @@ import urllib
 from os.path import expanduser
 import argparse
 
+# Initialize the Earth Engine API
+ee.Authenticate()
+ee.Initialize(project='ee-hollya')
+
 def create_image():
     # Define your region of interest (ROI)
     # Replace the coordinates with the geometry of your ROI
@@ -54,12 +58,8 @@ def create_image():
 
     print(f"Image saved locally at: {local_image_path}")
 
-if __name__ == "__main__":
-    # Initialize the Earth Engine API
-    ee.Authenticate()
-    ee.Initialize(project='ee-hollya')
-
-    create_image()
+#if __name__ == "__main__":
+create_image()
     #parser = argparse.ArgumentParser(description="This script runs inference on aois within a .csv file.")
     #parser.add_argument("-d", "--dataset_dir", type=str, required=True, help="Directory containing the hr_dataset, and lr_dataset, in the correct format(see worldstrat github)")
     #args = parser.parse_args()
