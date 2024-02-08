@@ -1,7 +1,7 @@
 // landingPic.jsx
 
 import React from 'react'
-import '../css/landingPic.css'
+import '../../css/landingPic.css'
 
 function LandingPic() {
     return (
