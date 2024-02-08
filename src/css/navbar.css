@@ -1,0 +1,22 @@
+/* navbar.css */
+
+.navbar {
+    position: absolute;
+    height: 75px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 2;
+}
+
+.navbar--links {
+    padding: 15px;
+    margin: 5px;
+    font-size: large;
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 17px;
+    background-color: #F0EAD6;
+}
