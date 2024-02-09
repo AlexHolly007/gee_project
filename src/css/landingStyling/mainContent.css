@@ -6,6 +6,9 @@
 }
 
 p {
+    text-align: justify;
     border: 1px solid black;
-    height: 100px;
+    font-size: 16px;
+    height: 75px;
+    padding: 10px;
 }
