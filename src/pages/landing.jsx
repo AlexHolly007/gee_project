@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
-import Navbar from '../components/landing/navbar'
-import LandingPic from '../components/landing/landingPic'
-import MainContent from '../components/landing/mainContent'
+import React from 'react'
+import Navbar from '../components/navbar'
+import LandingPic from '../components/landingPic'
+import MainContent from '../components/mainContent'
 
 function Landing() {
-
-    const [isHeaderInterSecting, setIsHeaderIntersecting] = useState(false)
 
     return (
         <>

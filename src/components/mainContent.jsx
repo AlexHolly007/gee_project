@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react'
-import '../../css/landingStyling/mainContent.css'
+import '../css/mainContent.css'
 
 function MainContent() {
     return (

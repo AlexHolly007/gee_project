@@ -1,7 +1,7 @@
 // navbar.js
 
 import React from 'react'
-import '../../css/landingStyling/navbar.css'
+import '../css/navbar.css'
 
 function Navbar() {
     return (
