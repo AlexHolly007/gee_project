@@ -35,12 +35,10 @@ def create_image():
         .filter(ee.Filter.date(start_date, end_date))
         .mean()
     )
-    #base_clip = basemap.clip(roi)
-    #L8_clip = L8.clip(roi)
-
-    
-    # Display the image
+    basemap = basemap.clip(roi)
+    L8 = L8.clip(roi)
     visualization = basemap.visualize(bands=["B4", "B3", "B2"], min=0, max=0.3, gamma=1.4)
+
     #visualization = basemap.visualize(
     #    bands=["B4", "B3", "B2"],
     #    min=0,
@@ -53,11 +51,15 @@ def create_image():
     #            palette= ['ffffff', '00ffff', '0080ff', 'da00ff', 'ffa400', 'ff0000']
     #        )
     #    )
+
+
+
+    
     export_task = ee.batch.Export.image.toCloudStorage(
         image=visualization,
         description='exported_image',
         bucket="ee-hollya",
-        fileNamePrefix="image.png",
+        fileNamePrefix="image",
         region=visualization.geometry().bounds(),
         scale=30  # Adjust the scale as needed
     )
