@@ -1,0 +1,25 @@
+.timeContainer {
+    height: 100vh;
+    position: relative;
+}
+
+.bigCard {
+    top: 50%;
+    border: 1px solid black;
+    width: 75%;
+    position: absolute;
+    right: 12.5%;
+    height: 75%;
+    transform: translateY(-50%);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.actionBar {
+    border: 1px solid black;
+    height: 60px; /* Adjust the height as needed */
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
