@@ -7,7 +7,7 @@ function LandingPic() {
     return (
         <>
             <div className="image--container">
-                <h1 className='hero--text'>Protect Earth</h1>
+                <h1 className='hero--text'>Monitor Earth</h1>
             </div>
         </>
     )

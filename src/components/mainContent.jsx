@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import '../css/mainContent.css'
 
 function MainContent() {
@@ -11,21 +11,6 @@ function MainContent() {
                 <p>
                     This is an example sentence. I just need to make something that looks like it is normal writing and i will come up with the normal writing eventually.
                     but as for now this will do let's see how it looks when i render it in with this hot modular replacement.
-                </p>
-                <p>
-                    Hello
-                </p>
-                <p>
-                    Hello
-                </p>
-                <p>
-                    Hello
-                </p>
-                <p>
-                    Hello
-                </p>
-                <p>
-                    Hello
                 </p>
         </div>
     </>

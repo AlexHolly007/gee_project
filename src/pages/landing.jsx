@@ -1,15 +1,17 @@
 import React from 'react'
-import Navbar from '../components/navbar'
 import LandingPic from '../components/landingPic'
 import MainContent from '../components/mainContent'
+import LocationGetter from '../components/locationGetter'
+import TimeCard from '../components/timeCard'
 
 function Landing() {
 
     return (
         <>
-            <Navbar />
             <LandingPic />
             <MainContent />
+            <LocationGetter />
+            <TimeCard />
         </>
     )
 }
