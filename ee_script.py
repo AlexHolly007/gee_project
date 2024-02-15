@@ -27,7 +27,7 @@ def create_image(start_date, end_date, long, lat, miles):
         ee.ImageCollection("LANDSAT/LC08/C02/T1_TOA") \
         .filterBounds(roi) \
         .filterDate(start_date, end_date) \
-        .filterMetadata("CLOUD_COVER", 'less_than', .3) \
+        .filterMetadata("CLOUD_COVER", 'less_than', 5) \
         .mean()
     )
     L8 = (
@@ -37,7 +37,7 @@ def create_image(start_date, end_date, long, lat, miles):
         .filter(ee.Filter.date(start_date, end_date))
         .mean()
     )
-    #basemap = basemap.clip(roi)
+    basemap = basemap.clip(roi)
     L8 = L8.clip(roi)
     visualization = basemap.visualize(bands=["B4", "B3", "B2"], min=0, max=0.3, gamma=1.4)
 
