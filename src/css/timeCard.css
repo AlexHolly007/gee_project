@@ -16,10 +16,3 @@
     flex-direction: column;
     justify-content: space-between;
 }
-
-.actionBar {
-    border: 1px solid black;
-    height: 60px; /* Adjust the height as needed */
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-}

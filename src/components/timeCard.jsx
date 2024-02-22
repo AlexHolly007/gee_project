@@ -7,9 +7,6 @@ export default function timeCard() {
             <div className='timeContainer'>
                 <div className="bigCard">
                     <h1>Header</h1>
-                    <div className='actionBar'>
-
-                    </div>
                 </div>
             </div>
         </>
