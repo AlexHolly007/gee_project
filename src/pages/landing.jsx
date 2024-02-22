@@ -11,7 +11,7 @@ function Landing() {
             <LandingPic />
             <MainContent />
             <LocationGetter />
-            <TimeCard />
+            <TimeCard image={'../../imgs/test5.jpeg'}/>
         </>
     )
 }

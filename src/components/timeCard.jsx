@@ -1,13 +1,16 @@
 import React from 'react'
 import '../css/timeCard.css'
 
-export default function timeCard() {
+export default function timeCard(props) {
+
+    const { image } = props
+
+
     return (
         <>
             <div className='timeContainer'>
-                <div className="bigCard">
-                    <h1>Header</h1>
-                </div>
+                <img className="bigCard" src={image}>
+                </img>
             </div>
         </>
     )
