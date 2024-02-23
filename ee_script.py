@@ -100,7 +100,7 @@ def create_image(start_date, end_date, long, lat, miles, count):
     #export_task.start()
 
     # Save the image to local machine
-    local_image_path = os.path.expanduser(f'Timelapse/output{300}.png')
+    local_image_path = os.path.expanduser(f'Timelapse/output{count}.png')
     print(f"IMAGE GRABBING STARTING")
     
     urllib.request.urlretrieve(
