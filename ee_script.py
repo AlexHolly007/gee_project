@@ -5,6 +5,9 @@ import urllib
 from os.path import expanduser
 import argparse
 from datetime import datetime
+import requests
+from io import BytesIO
+from PIL import Image
 
 # Initialize the Earth Engine API
 ee.Authenticate()
@@ -116,13 +119,33 @@ def create_image(start_date, end_date, long, lat, miles, count):
 
     print(f"Image saved locally at: {local_image_path}")
 
+    url = visualization.getThumbURL(
+    params={
+        'region': roi.getInfo()['coordinates'],
+        'format': 'png',
+        'dimensions': 512
+    }
+    )
+
+    # Make a request to the URL
+    response = requests.get(url)
+
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        # Read the content of the response into a BytesIO object
+        image_content = BytesIO(response.content)
+
+        # You can use the PIL library to open the image from the BytesIO object
+        return(Image.open(image_content))
+
 if __name__ == "__main__":
     start_date = datetime(2022,1,2)
     end_date = datetime(2023,1,1)
     lat = 40.5853
     long = -105.0844
     miles = 10
-    create_image(start_date, end_date, long, lat, miles, 100)
+    image = create_image(start_date, end_date, long, lat, miles, 100)
+    print(image)
     #parser = argparse.ArgumentParser(description="This script runs inference on aois within a .csv file.")
     #parser.add_argument("-d", "--dataset_dir", type=str, required=True, help="Directory containing the hr_dataset, and lr_dataset, in the correct format(see worldstrat github)")
     #args = parser.parse_args()

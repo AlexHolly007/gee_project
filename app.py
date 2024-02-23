@@ -19,12 +19,14 @@ def timelapse():
     lon = request.args.get('lon')
     lat = request.args.get('lat')
     miles = request.args.get('miles')
+    result = []
     for i in range(39):
         if i == 27 or i == 28:
             continue
         start = datetime(1985+i,1,2)
         end = datetime(1986+i,1,1)
-        create_image(start_date=start,end_date=end,long=lon,lat=lat,miles=miles,count=i)
+        image = create_image(start_date=start,end_date=end,long=lon,lat=lat,miles=miles,count=i)
+        result.append(image)
         print("start:",start)
     return
 
