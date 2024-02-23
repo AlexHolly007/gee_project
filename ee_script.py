@@ -104,7 +104,6 @@ def create_image(start_date, end_date, long, lat, miles, count):
 
     # Save the image to local machine
     local_image_path = os.path.expanduser(f'Timelapse/output{count}.png')
-    print(f"IMAGE GRABBING STARTING")
     
     urllib.request.urlretrieve(
                     visualization.getThumbURL(
@@ -127,16 +126,10 @@ def create_image(start_date, end_date, long, lat, miles, count):
     }
     )
 
-    # Make a request to the URL
+    # Make a request to the URL and return image
     response = requests.get(url)
-
-    # Check if the request was successful (status code 200)
-    if response.status_code == 200:
-        # Read the content of the response into a BytesIO object
-        image_content = BytesIO(response.content)
-
-        # You can use the PIL library to open the image from the BytesIO object
-        return(Image.open(image_content))
+    image_content = BytesIO(response.content)
+    return(Image.open(image_content))
 
 if __name__ == "__main__":
     start_date = datetime(2022,1,2)

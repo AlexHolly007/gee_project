@@ -34,20 +34,34 @@ function LocationGetter() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch(`http://127.0.0.1:60061/getTimelapse/?lon=${longitude}&lat=${latitude}&miles=${miles}`, {
-                method: 'POST',
+            const response = await fetch(`http://127.0.0.1:60061/getTimelapse?lon=${longitude}&lat=${latitude}&miles=${miles}`, {
+                method: 'GET',
+                mode: 'cors',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ longitude, latitude, miles })
             });
             const data = await response.json();
+            console.log(data.result[0])
             setLocationResult(data.result); // Assuming API sends back a result
         } catch (error) {
             console.error('Error:', error);
             setLocationResult('Error occurred while fetching data');
         }
     };
+
+    const handleSubmit1 = async (event) => {
+        fetch('http://127.0.0.1:60061/getTimelapse?lon=-105&lat=40&miles=10', {
+            method: 'GET',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    }
 
     return (
         <>
