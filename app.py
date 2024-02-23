@@ -3,8 +3,11 @@ from ee_script import create_image
 import json, requests
 import os
 from datetime import datetime, timedelta
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def main():
