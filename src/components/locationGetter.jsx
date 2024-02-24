@@ -1,27 +1,3 @@
-// import React from 'react'
-// import '../css/locationGetter.css'
-
-// function LocationGetter() {
-//     return (
-//         <>
-//             <div className="location--container">
-//                 <form className="user--input">
-//                     <label htmlFor="longitude">Longitude: </label>
-//                     <input type="text" id="longitude" name="longitude"></input>
-//                     <label htmlFor="latitude">Latitude: </label>
-//                     <input type="text" id="latitude" name="latitude"></input>
-//                     <label htmlFor="miles">Miles: </label>
-//                     <input type="text" id="miles" name="miles"></input>
-//                     <button type="submit">Submit</button>
-//                 </form>
-//             </div>
-//             <h1>This is where the location will be printed out after user enters</h1>
-//         </>
-//     )
-// }
-
-// export default LocationGetter;
-
 import React, { useState } from 'react';
 import '../css/locationGetter.css';
 
@@ -49,19 +25,6 @@ function LocationGetter() {
             setLocationResult('Error occurred while fetching data');
         }
     };
-
-    const handleSubmit1 = async (event) => {
-        fetch('http://127.0.0.1:60061/getTimelapse?lon=-105&lat=40&miles=10', {
-            method: 'GET',
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error('Error:', error));
-    }
 
     return (
         <>

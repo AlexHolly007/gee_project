@@ -3,12 +3,15 @@
     height: auto;
     margin-left: 25%;
     margin-top: 20px;
+    margin-bottom: 50px;;
 }
 
 p {
     text-align: justify;
-    border: 1px solid black;
+    display: inline-block;
     font-size: 16px;
+    line-height: 1.5;
     height: 75px;
+    width: 100%;
     padding: 10px;
 }
