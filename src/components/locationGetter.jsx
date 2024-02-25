@@ -5,7 +5,6 @@ function LocationGetter() {
     const [longitude, setLongitude] = useState('');
     const [latitude, setLatitude] = useState('');
     const [miles, setMiles] = useState('');
-    const [locationResult, setLocationResult] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -22,7 +21,6 @@ function LocationGetter() {
             setLocationResult(data.result); // Assuming API sends back a result
         } catch (error) {
             console.error('Error:', error);
-            setLocationResult('Error occurred while fetching data');
         }
     };
 
@@ -39,7 +37,6 @@ function LocationGetter() {
                     <button type="submit" onClick={handleSubmit}>Submit</button>
                 </form>
             </div>
-            <h1>{locationResult}</h1>
         </>
     );
 }
