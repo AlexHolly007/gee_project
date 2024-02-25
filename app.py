@@ -24,12 +24,15 @@ def timelapse():
         print("GOT THE PREFLIGHT REQUEST")
         return response
 
-
-    lon = request.args.get('lon')
-    lat = request.args.get('lat')
-    miles = request.args.get('miles')
+    print(f"LON: {request.args.get('lon')}")
+    lon = float(request.args.get('lon'))
+    print(f"LONG AFTER FLOAT {lon == -105}")
+    lat = float(request.args.get('lat'))
+    print(f"LAT AFTER FLOAT {lat == 40}")
+    miles = float(request.args.get('miles'))
+    print(f"MILES AFTER FLOAT {miles == 10}")
     result = []
-    for i in range(5):#39
+    for i in range(39):
         if i == 27 or i == 28:
             continue
         start = datetime(1985+i,1,2)
