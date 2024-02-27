@@ -1,6 +1,9 @@
 # gee_project
 Google solutions project
 
+Installing flask dependencies
+```pip3 install -r requirements.txt```
+
 Instructions on how to run:
 
 1) Open a new terminal and enter the command `npm run dev`
